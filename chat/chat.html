@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat | StageConnect ISET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="site-shell dark-mode" data-base="../" data-nav="chat">
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="brand-copy">StageConnect ISET<span>Chat workspace</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" data-nav-link="home">Home</a>
+        <a href="../about.html" data-nav-link="about">About</a>
+        <a href="../stages/search.html" data-nav-link="internships">Internships</a>
+        <a href="../student/dashboard.html" data-nav-link="student">Student</a>
+        <a href="../company/dashboard.html" data-nav-link="company">Company</a>
+        <a href="../admin/dashboard.html" data-nav-link="admin">Admin</a>
+        <a href="../contact.html" data-nav-link="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button-ghost" href="../notifications/list.html"><i class="fa-solid fa-bell"></i><span class="notification-badge" data-unread-count>0</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container chat-layout">
+      <aside class="panel chat-sidebar reveal">
+        <span class="eyebrow"><i class="fa-solid fa-address-book"></i>Contacts</span>
+        <div id="chat-contacts" class="chat-list spacer-top"></div>
+      </aside>
+      <section class="panel chat-main reveal">
+        <div class="stats-row">
+          <div>
+            <h1 id="chat-title">Contact</h1>
+            <p id="chat-subtitle" class="subtle">Conversation details</p>
+          </div>
+          <span class="pill">Messenger / Discord inspired</span>
+        </div>
+        <div id="chat-thread" class="message-thread"></div>
+        <div id="typing-indicator" class="typing-indicator">
+          <span>Typing</span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-message" class="input" type="text" placeholder="Type your message">
+          <button class="button" type="submit"><i class="fa-solid fa-paper-plane"></i>Send</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="../index.html"><span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span><span class="brand-copy">StageConnect ISET<span>Chat workspace</span></span></a></div>
+      <div class="footer-links"><strong>Messaging</strong><a href="../notifications/list.html">Notifications</a><a href="../student/dashboard.html">Student</a></div>
+      <div class="footer-links"><strong>Discovery</strong><a href="../stages/search.html">Search</a><a href="../reviews/list.html">Reviews</a></div>
+      <div class="footer-links"><strong>Support</strong><a href="../contact.html">Contact</a><span>&copy; <span data-current-year></span> StageConnect ISET</span></div>
+    </div>
+  </footer>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

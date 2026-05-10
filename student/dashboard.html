@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | StageConnect ISET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="site-shell dark-mode" data-base="../" data-nav="student">
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="brand-copy">StageConnect ISET<span>Student dashboard</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" data-nav-link="home">Home</a>
+        <a href="../about.html" data-nav-link="about">About</a>
+        <a href="../stages/search.html" data-nav-link="internships">Internships</a>
+        <a href="dashboard.html" data-nav-link="student">Student</a>
+        <a href="../company/dashboard.html" data-nav-link="company">Company</a>
+        <a href="../admin/dashboard.html" data-nav-link="admin">Admin</a>
+        <a href="../contact.html" data-nav-link="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button-ghost" href="../notifications/list.html"><i class="fa-solid fa-bell"></i>Alerts <span class="notification-badge" data-unread-count>0</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container dashboard-grid">
+      <aside id="student-sidebar" class="sidebar-card"></aside>
+      <div class="grid">
+        <section class="panel reveal">
+          <div class="stats-row">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-bolt"></i>Student workspace</span>
+              <h1 class="section-title spacer-top">Recommended internships and next actions</h1>
+            </div>
+            <div class="inline-actions">
+              <a class="button" href="../stages/search.html"><i class="fa-solid fa-magnifying-glass"></i>Search roles</a>
+              <a class="button-ghost" href="profile.html"><i class="fa-solid fa-user-pen"></i>Edit profile</a>
+            </div>
+          </div>
+          <div class="grid grid-3 spacer-lg">
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-file-arrow-up"></i></div>
+              <h3>Fake CV upload</h3>
+              <p class="section-copy">Store your CV filename locally and keep it visible across the student experience.</p>
+              <a class="button-ghost spacer-top" href="profile.html">Manage CV</a>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+              <h3>Favorites shortlist</h3>
+              <p class="section-copy">Build a short, reviewable list of internships before applying or sharing them.</p>
+              <a class="button-ghost spacer-top" href="favorites.html">Open favorites</a>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+              <h3>Fast communication</h3>
+              <p class="section-copy">Switch into simulated chat and notification flows without leaving the platform.</p>
+              <a class="button-ghost spacer-top" href="../chat/chat.html">Open chat</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel reveal">
+          <div class="stats-row">
+            <h2>Recommended internships</h2>
+            <span class="pill">Matched by level + department</span>
+          </div>
+          <div id="student-recommended" class="grid grid-2 spacer-lg"></div>
+        </section>
+
+        <section class="summary-panel">
+          <article class="panel reveal">
+            <div class="stats-row">
+              <h2>Favorites preview</h2>
+              <a class="button-ghost" href="favorites.html">See all</a>
+            </div>
+            <div id="student-favorites-preview" class="list spacer-top"></div>
+          </article>
+          <article class="panel reveal">
+            <div class="stats-row">
+              <h2>Notifications</h2>
+              <a class="button-ghost" href="../notifications/list.html">Notification center</a>
+            </div>
+            <div id="student-notifications" class="list spacer-top"></div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+          <span class="brand-copy">StageConnect ISET<span>Student dashboard</span></span>
+        </a>
+        <p class="footer-copy spacer-top">Designed for repeated student use: discover, compare, save, and coordinate.</p>
+      </div>
+      <div class="footer-links">
+        <strong>Student</strong>
+        <a href="profile.html">Profile</a>
+        <a href="favorites.html">Favorites</a>
+      </div>
+      <div class="footer-links">
+        <strong>Discovery</strong>
+        <a href="../stages/search.html">Internships</a>
+        <a href="../reviews/list.html">Reviews</a>
+      </div>
+      <div class="footer-links">
+        <strong>Support</strong>
+        <a href="../notifications/list.html">Notifications</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

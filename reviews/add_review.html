@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opinions &amp; Reviews | StageConnect ISET</title>
+  <meta name="description" content="Share your opinion about internship companies and leave a star review for other students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="site-shell dark-mode" data-base="../" data-nav="reviews">
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="brand-copy">StageConnect ISET<span>Opinions &amp; Reviews</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" data-nav-link="home">Home</a>
+        <a href="../about.html" data-nav-link="about">About</a>
+        <a href="../stages/search.html" data-nav-link="internships">Internships</a>
+        <a href="../student/dashboard.html" data-nav-link="student">Student</a>
+        <a href="../company/dashboard.html" data-nav-link="company">Company</a>
+        <a href="../admin/dashboard.html" data-nav-link="admin">Admin</a>
+        <a href="../contact.html" data-nav-link="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button-ghost" href="../notifications/list.html"><i class="fa-solid fa-bell"></i><span class="notification-badge" data-unread-count>0</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ PAGE HERO ══════════════════════════════════════════════════════════ -->
+    <section class="add-review-hero">
+      <div class="container">
+        <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i>Student voices</span>
+        <h1 class="section-title spacer-top">Share your internship experience</h1>
+        <p class="section-copy">Two simple steps: first write your detailed opinion about the company (saved to Google Sheets for the coordination team), then leave a quick star review visible to all students.</p>
+        <div class="step-tabs spacer-top">
+          <a href="#step-opinion" class="step-tab-btn step-tab-active">
+            <span class="step-num">1</span>
+            <span><strong>My opinion</strong><small>Google Sheets</small></span>
+          </a>
+          <div class="step-tab-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <a href="#step-review" class="step-tab-btn">
+            <span class="step-num step-num-2">2</span>
+            <span><strong>Star review</strong><small>Visible to all</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STEP 1 — STUDENT OPINION → GOOGLE SHEETS ═══════════════════════════ -->
+    <section class="section" id="step-opinion">
+      <div class="container">
+        <div class="step-label-row">
+          <div class="step-badge">1</div>
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-lightbulb"></i>Step 1 — Your detailed opinion</span>
+            <h2 class="section-title spacer-top">What do you really think about this company?</h2>
+            <p class="section-copy">Your answer is sent directly to Google Sheets. The coordination team reads all responses to improve the internship programme.</p>
+          </div>
+        </div>
+
+        <!-- Status banner -->
+        <div id="opinion-status" class="opinion-status" aria-live="polite" hidden></div>
+
+        <div class="summary-panel spacer-lg">
+          <section class="panel reveal">
+            <form id="opinion-form" class="form-grid" novalidate>
+
+              <!-- Identity row -->
+              <div class="form-field">
+                <label for="op-student-name">Your full name <span class="req">*</span></label>
+                <input id="op-student-name" class="input" type="text" name="studentName" autocomplete="name" placeholder="ex: Meriem Saidi" required>
+              </div>
+              <div class="form-field">
+                <label for="op-student-dept">Department <span class="req">*</span></label>
+                <select id="op-student-dept" class="input" name="department" required>
+                  <option value="" disabled selected>Select department</option>
+                  <option value="IT">IT</option>
+                  <option value="Mechanical">Mechanical</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Management">Management</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="op-student-level">Study level <span class="req">*</span></label>
+                <select id="op-student-level" class="input" name="level" required>
+                  <option value="" disabled selected>Select level</option>
+                  <option value="1st year">1st year</option>
+                  <option value="2nd year">2nd year</option>
+                  <option value="3rd year">3rd year</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="op-student-email">Email <small class="subtle">(optional — stays private)</small></label>
+                <input id="op-student-email" class="input" type="email" name="email" autocomplete="email" placeholder="you@iset.tn">
+              </div>
+
+              <!-- Company -->
+              <div class="form-field full">
+                <label for="op-society">Company / Society name <span class="req">*</span></label>
+                <input id="op-society" class="input" type="text" name="societyName" placeholder="e.g. Nexora Labs, Atlas Motion…" required>
+              </div>
+
+              <!-- Overall opinion -->
+              <div class="form-field full">
+                <label for="op-overall">Overall opinion <span class="req">*</span></label>
+                <textarea id="op-overall" class="textarea" name="overallOpinion" rows="4"
+                  placeholder="Describe your general experience and impression of this company…" required></textarea>
+              </div>
+
+              <!-- Pros & Cons -->
+              <div class="form-field">
+                <label for="op-pros"><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> What you liked (pros)</label>
+                <textarea id="op-pros" class="textarea" name="pros" rows="3"
+                  placeholder="Mentorship quality, real tasks, good atmosphere…"></textarea>
+              </div>
+              <div class="form-field">
+                <label for="op-cons"><i class="fa-solid fa-circle-xmark" style="color:var(--danger)"></i> What could be better (cons)</label>
+                <textarea id="op-cons" class="textarea" name="cons" rows="3"
+                  placeholder="Limited technical exposure, communication gaps…"></textarea>
+              </div>
+
+              <!-- Recommendation -->
+              <div class="form-field full">
+                <label>Would you recommend this company to another student? <span class="req">*</span></label>
+                <div class="recommend-group">
+                  <label class="recommend-option" id="rec-yes-label">
+                    <input type="radio" name="recommend" value="Yes" id="rec-yes" required>
+                    <span><i class="fa-solid fa-thumbs-up"></i> Yes, recommend</span>
+                  </label>
+                  <label class="recommend-option" id="rec-maybe-label">
+                    <input type="radio" name="recommend" value="Maybe" id="rec-maybe">
+                    <span><i class="fa-solid fa-circle-half-stroke"></i> Maybe</span>
+                  </label>
+                  <label class="recommend-option" id="rec-no-label">
+                    <input type="radio" name="recommend" value="No" id="rec-no">
+                    <span><i class="fa-solid fa-thumbs-down"></i> No</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <button class="button opinion-submit-btn" type="submit" id="opinion-submit">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  Envoyer mon opinion à Google Sheets
+                </button>
+                <p class="subtle" style="margin-top:10px;font-size:0.82rem;">
+                  <i class="fa-solid fa-lock" style="margin-right:6px"></i>
+                  Your response is saved securely and only visible to the coordination team.
+                </p>
+              </div>
+            </form>
+          </section>
+
+          <aside class="panel reveal">
+            <h3><i class="fa-brands fa-google" style="margin-right:8px;color:#4285F4"></i>Why Google Sheets?</h3>
+            <p class="section-copy spacer-top">Your opinion is instantly recorded in a shared Google Sheet. The coordination team can then analyse all student feedback and improve the internship programme year after year.</p>
+            <div class="list spacer-top">
+              <div class="list-item"><div><strong>Anonymous option</strong><div class="subtle">Leave the email empty to stay anonymous.</div></div></div>
+              <div class="list-item"><div><strong>Real impact</strong><div class="subtle">Your feedback helps future students choose the right company.</div></div></div>
+              <div class="list-item"><div><strong>Structured data</strong><div class="subtle">Each field maps to a column in the Google Sheet.</div></div></div>
+              <div class="list-item"><div><strong>Instant recording</strong><div class="subtle">Responses appear in the sheet within seconds.</div></div></div>
+            </div>
+            <div class="spacer-top">
+              <a class="button-ghost" href="list.html"><i class="fa-solid fa-eye"></i> See all student opinions</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STEP 2 — STAR REVIEW → VISIBLE TO ALL ══════════════════════════════ -->
+    <section class="section-sm step-2-section" id="step-review">
+      <div class="container">
+        <div class="step-label-row">
+          <div class="step-badge step-badge-2">2</div>
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-star"></i>Step 2 — Quick star review</span>
+            <h2 class="section-title spacer-top">Leave a public star rating</h2>
+            <p class="section-copy">This short review with a star rating is shown to all students on the <a href="list.html">Reviews page</a> to help them choose the right internship.</p>
+          </div>
+        </div>
+
+        <div class="summary-panel spacer-lg">
+          <section class="panel reveal">
+            <form id="review-form" class="form-grid spacer-lg">
+              <div class="form-field">
+                <label for="review-name">Name</label>
+                <input id="review-name" class="input" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="review-role">Role</label>
+                <input id="review-role" class="input" type="text" name="role" placeholder="3rd year IT student" required>
+              </div>
+              <div class="form-field full">
+                <label for="review-company">Company</label>
+                <input id="review-company" class="input" type="text" name="company" placeholder="Company name" required>
+              </div>
+              <div class="form-field full">
+                <label>Rating</label>
+                <div id="star-picker" class="star-picker">
+                  <button type="button" class="is-active" data-rating="1"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="is-active" data-rating="2"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="is-active" data-rating="3"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="is-active" data-rating="4"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="is-active" data-rating="5"><i class="fa-solid fa-star"></i></button>
+                </div>
+                <input id="review-rating" type="hidden" name="rating" value="5">
+              </div>
+              <div class="form-field full">
+                <label for="review-content">Your review</label>
+                <textarea id="review-content" class="textarea" name="content" rows="4"
+                  placeholder="Describe your experience in a few sentences…" required></textarea>
+              </div>
+              <div class="form-field full">
+                <button class="button-secondary" type="submit" style="min-height:52px;font-size:1rem">
+                  <i class="fa-solid fa-paper-plane"></i>Publish my review
+                </button>
+              </div>
+            </form>
+          </section>
+          <aside class="panel reveal">
+            <h3>Good review tips</h3>
+            <div class="list spacer-top">
+              <div class="list-item"><div><strong>Be specific</strong><div class="subtle">Mention mentorship quality, real tasks, and learning value.</div></div></div>
+              <div class="list-item"><div><strong>Keep it realistic</strong><div class="subtle">Describe what the internship actually involved.</div></div></div>
+              <div class="list-item"><div><strong>Help the next student</strong><div class="subtle">Surface what made the company useful or challenging.</div></div></div>
+            </div>
+            <div class="spacer-top">
+              <a class="button-ghost" href="list.html"><i class="fa-solid fa-list"></i> See all reviews</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="../index.html"><span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span><span class="brand-copy">StageConnect ISET<span>Opinions &amp; Reviews</span></span></a></div>
+      <div class="footer-links"><strong>Reviews</strong><a href="list.html">All reviews &amp; opinions</a><a href="../stages/search.html">Find internships</a></div>
+      <div class="footer-links"><strong>Student</strong><a href="../student/dashboard.html">Dashboard</a><a href="../student/favorites.html">Favorites</a></div>
+      <div class="footer-links"><strong>Support</strong><a href="../contact.html">Contact</a><span>&copy; <span data-current-year></span> StageConnect ISET</span></div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/opinion.js"></script>
+</body>
+</html>
