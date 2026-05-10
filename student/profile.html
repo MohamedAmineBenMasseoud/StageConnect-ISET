@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile | StageConnect ISET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="site-shell dark-mode" data-base="../" data-nav="student">
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="brand-copy">StageConnect ISET<span>Student profile</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" data-nav-link="home">Home</a>
+        <a href="../about.html" data-nav-link="about">About</a>
+        <a href="../stages/search.html" data-nav-link="internships">Internships</a>
+        <a href="dashboard.html" data-nav-link="student">Student</a>
+        <a href="../company/dashboard.html" data-nav-link="company">Company</a>
+        <a href="../admin/dashboard.html" data-nav-link="admin">Admin</a>
+        <a href="../contact.html" data-nav-link="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button-ghost" href="../notifications/list.html"><i class="fa-solid fa-bell"></i><span class="notification-badge" data-unread-count>0</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container summary-panel">
+      <section class="panel reveal">
+        <div class="stats-row">
+          <div>
+            <span class="eyebrow"><i class="fa-solid fa-user-gear"></i>Profile simulation</span>
+            <h1 class="section-title spacer-top">Edit your student profile</h1>
+          </div>
+          <span class="pill">Completion: <strong id="profile-completion">0%</strong></span>
+        </div>
+        <form id="profile-form" class="form-grid spacer-lg">
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input id="name" class="input" type="text" name="name">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" class="input" type="email" name="email">
+          </div>
+          <div class="form-field">
+            <label for="department">Department</label>
+            <select id="department" class="select" name="department">
+              <option value="IT">IT</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Management">Management</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="level">Level</label>
+            <select id="level" class="select" name="level">
+              <option value="1st year">1st year</option>
+              <option value="2nd year">2nd year</option>
+              <option value="3rd year">3rd year</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="headline">Professional headline</label>
+            <input id="headline" class="input" type="text" name="headline">
+          </div>
+          <div class="form-field">
+            <label for="location">Location</label>
+            <input id="location" class="input" type="text" name="location">
+          </div>
+          <div class="form-field">
+            <label for="linkedIn">LinkedIn</label>
+            <input id="linkedIn" class="input" type="text" name="linkedIn">
+          </div>
+          <div class="form-field full">
+            <label for="skills">Skills</label>
+            <input id="skills" class="input" type="text" name="skills">
+          </div>
+          <div class="form-field full">
+            <label for="bio">Short bio</label>
+            <textarea id="bio" class="textarea" name="bio"></textarea>
+          </div>
+          <div class="form-field full">
+            <button class="button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Save profile</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel reveal">
+        <span class="eyebrow"><i class="fa-solid fa-file-arrow-up"></i>CV simulation</span>
+        <h2 class="section-title spacer-top">Store an uploaded CV name</h2>
+        <p class="section-copy">This keeps the current file name in localStorage so it remains visible between student pages.</p>
+        <div class="form-field spacer-lg">
+          <label for="cv-upload">Upload CV</label>
+          <input id="cv-upload" class="input" type="file" accept=".pdf,.doc,.docx">
+          <span id="cv-file-name" class="helper">No file selected</span>
+        </div>
+        <div class="list spacer-lg">
+          <div class="list-item"><span>Blue badge</span><span class="level-badge level-1">1st year</span></div>
+          <div class="list-item"><span>Orange badge</span><span class="level-badge level-2">2nd year</span></div>
+          <div class="list-item"><span>Green badge</span><span class="level-badge level-3">3rd year</span></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+          <span class="brand-copy">StageConnect ISET<span>Student profile</span></span>
+        </a>
+      </div>
+      <div class="footer-links">
+        <strong>Student</strong>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="favorites.html">Favorites</a>
+      </div>
+      <div class="footer-links">
+        <strong>Explore</strong>
+        <a href="../stages/search.html">Search</a>
+        <a href="../chat/chat.html">Chat</a>
+      </div>
+      <div class="footer-links">
+        <strong>Support</strong>
+        <a href="../contact.html">Contact</a>
+        <span>&copy; <span data-current-year></span> StageConnect ISET</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
